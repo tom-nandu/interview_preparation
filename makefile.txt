@@ -1,0 +1,18 @@
+Makefile 
+
+
+
+It is an program building tool which runs on unix , linux and their flavours . 
+For example , 
+
+  you have 200 src files , 20 header fileS                    ------------> RAW MATERIALS 
+  u need 10 object files , 5 shared obj files , 2 executables ------------> DISH 
+  Then here comes the roles of makefile . 
+
+  Functions of makefile :
+
+1) Compiling 
+2) Linking 
+3) Installation of other dependencies 
+4) Creating static and dynamic libs & executables 
+
