@@ -16,3 +16,69 @@ For example ,
 3) Installation of other dependencies 
 4) Creating static and dynamic libs & executables 
 
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Source code --> line of program 
+Compliation of src code  -----> .o file   object file 
+tom.o + tony.o           ----->  load.a   static lib
+                                 xyz.so   shared lib 
+
+Static linking → code copied into executable
+
+Dynamic linking → code loaded from .so at runtime
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Preprocessing
+2. Compilation
+3. Assembly
+4. Linking
+
+
+1️⃣ Preprocessing (cpp)
+Input: main.c Output: main.i (expanded C code)
+
+What happens:
+
+#include <stdio.h> → replaced with the full header file contents
+
+#define macros are expanded
+
+Comments removed
+
+Conditional compilation (#ifdef, #if) resolved
+
+2️⃣ Compilation (cc1)
+Input: main.i Output: main.s (assembly code)
+
+The compiler converts C → assembly language for your CPU
+
+3️⃣ Assembly (as)
+Input: main.s Output: main.o (machine code)
+
+The assembler converts assembly → binary machine code.
+
+This .o file contains:
+
+Machine instructions
+
+Symbol table (names of functions/variables)
+
+Relocation info (places the linker must fix)
+
+4️⃣ Linking (ld)
+Input: .o files Output: executable or .so library
+
+The linker:
+
+Combines all .o files
+
+Resolves function references
+
+Pulls in standard libraries (like libc)
+
+Fixes addresses and relocations
