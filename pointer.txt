@@ -1,0 +1,43 @@
+Pointer:
+A pointer is like having your friend’s home address written on paper. You don’t have the friend, you only know where they live.
+
+Reference:
+A reference is like giving your friend a nickname. Same person, just another name.
+
+Pointers 
+
+
+1) Pointers is nothing but it just stores the address of an variable . 
+
+example :
+int y = 10 ; 
+int *x = &y ; 
+
+Now here x is an pointer which stores the address of y . 
+Ok , what is the use of storing an var address ? 
+I want to access the variable , how can i do it ? 
+
+*x = &y 
+what is &y ?
+
+Great ! 
+y stores value 10 
+now pointer x stores the address of y ie 10 .
+if i want to access this variable I need *x
+easy go :
+
+
+    int x = 10 ;
+    int *y = &x ;
+    
+    std::cout << x << std::endl ;    10
+    std::cout << &x << std::endl ;   0x7ffda25ea74c
+    std::cout << y << std::endl ;    0x7ffda25ea74c
+    std::cout << &y << std::endl ;   0x7ffda25ea750
+    std::cout << *y << std::endl ;   10
+    
+
+
+
+
+
