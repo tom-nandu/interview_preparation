@@ -1,0 +1,10 @@
+Glued libs are nothing just organizing the data structs than traditional methods . 
+
+dll.h  -> glthread.h
+dll.c  -> glthread.c 
+
+   __________________  
+  | gl - glue        |  industry format 
+  | threads - dll    |
+
+* Even linux kernel uses glued version of std libraries 
