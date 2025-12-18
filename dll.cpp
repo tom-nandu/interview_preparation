@@ -192,3 +192,111 @@ int main() {
     return 0;
 }
 ``
+
+My_implementation
+
+#include<iostream>
+
+
+struct node
+{
+    int data;
+    node *prev;
+    node *next;
+    
+    node(int da , node *p = nullptr , node *nx = nullptr):data(da),prev(p),next(nx)
+    {
+        
+    }
+};
+
+class List 
+{
+    node *head;
+    node *tail;
+    
+    public:
+    
+    List():head(nullptr),tail(nullptr) 
+    {
+        
+    }
+    
+    ~List()
+    {
+        node *cur = head ;
+        
+        if (cur != NULL)
+        {
+            node *next=cur->next;
+            delete cur;
+            cur = next;
+        }
+        
+        head = nullptr;
+        tail = nullptr;
+    }
+    
+    void insert_at_begin(int x)
+    {
+        node *n = new node(x);
+        
+        n->prev=NULL;
+        n->next=head;
+        
+        if (head!=NULL)
+        {
+            head->prev=n;
+        }
+        else 
+        {
+           tail=n;
+        }
+        
+        head=n;
+    }
+    
+    void insert_at_end(int x)
+    {
+        node *n = new node(x);
+        
+        n->next =NULL;
+        n->prev=tail;
+        
+        if (tail !=nullptr)
+        {
+            tail->next=n;
+        }
+        else
+        {
+            head=n;
+        }
+        tail = n;
+    }
+    
+    void print_forward() const
+    {
+        node *cur = head ;
+        
+        while (cur != NULL)
+        {
+            std::cout << cur->data  ;
+            if (cur->next) std::cout << " <-> " ; 
+            {
+                cur=cur->next;
+            }
+        }
+        
+        std::cout << "\n";
+    }
+    
+};
+
+int main()
+{
+    List tom;
+    tom.insert_at_end(100);
+    tom.insert_at_begin(1);
+    tom.print_forward();
+}
+
