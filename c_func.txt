@@ -50,3 +50,33 @@ Inside a function → program halts when that function is called.
 Inside main → program halts right there.
 
 In both cases, nothing after abort() executes.
+
+In C: (DECAY) 
+
+An array is not a pointer by itself, but in most contexts, it automatically converts (decays) to a pointer to its first element.
+This happens when you:
+
+Pass an array as a function argument.
+Use it in arithmetic or assignment (except sizeof or &).
+  
+int arr[3] = {10, 20, 30};
+int *p = arr;  // arr decays to &arr[0]
+
+------------------------------------------------------------------------------------------------------------------------------
+
+  
+const int *p = arr;  // OK
+*p = 5;              // ❌ error: read-only
+p = p + 1;           // ✅ OK: pointer itself can change
+
+
+int * const p = arr; // OK
+*p = 5;              // ✅ OK: modify the value
+p = p + 1;           // ❌ error: pointer is const
+
+
+const int * const p = arr; // OK
+*p = 5;                    // ❌ error
+p = p + 1;                 // ❌ error
+
+
