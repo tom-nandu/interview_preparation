@@ -121,3 +121,46 @@ WHEN AN FUCNTION HAVE POINTER ARGUMENTS
 THEY SHOULD CALL ADDRESS OF THE VAR TO CHANGE IN THE ORIGINAL VAR 
 IF NOT ONLY THE LOCAL VAR WILL BE CHANGED NOT THE EXPECTED OR CALLEE VAR 
 
+
+------------------------------------------------------------------------------------------------------------------------------
+
+ARRAY-POINTER ARRAY :
+
+#include <stdio.h>
+
+int main() {
+    // Single array
+    int arr[5] = {10,20,30,40,50};
+
+    // Pointer to array
+    int *p = arr;
+
+    // Two arrays
+    int a[3] = {1,2,3};
+    int b[3] = {4,5,6};
+
+    // Array of pointers
+    int *ptrs[2] = {a, b};
+
+    // Access examples
+    printf("arr[2] = %d\n", arr[2]);     // 30
+    printf("*(p+2) = %d\n", *(p+2));     // 30
+    printf("ptrs[0][1] = %d\n", ptrs[0][1]); // 2
+    printf("ptrs[1][2] = %d\n", ptrs[1][2]); // 6
+
+    return 0;
+}
+
+For address only in array use :
+
+&arr[0]   ----> address
+p         ----> address
+ptrs[0]   ----> address
+
+Access of element : 
+
+arr[0]         -----> value
+*(p)           -----> value
+(ptrs[0][1])   -----> value
+
+
