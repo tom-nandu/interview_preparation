@@ -80,3 +80,44 @@ const int * const p = arr; // OK
 p = p + 1;                 // ❌ error
 
 
+------------------------------------------------------------------------------------------------------------------------------
+
+ARRAY - Pointers : 
+
+int arr[4] ; 
+int *a = arr;
+now *a = arr[0] 
+
+how to access third element ??
+
+printf("%d",*(a+2))
+
+
+📌 Key idea: arr[i] is equivalent to *(arr + i)
+
+Pass by ref and pass by values are main .
+
+#include<stdio.h>
+
+void swap( int *a , int *y)
+{
+    int tmp = *a;
+    *a=*y;
+    *y=tmp;
+}
+    
+int main()
+{
+    int a =5  , c=10 ;
+    printf("before swap --> % d : %d \n",a,c);
+    swap(&a,&c);
+     printf("after swap --> % d : %d \n",a,c);
+     return 0 ;
+}
+
+
+
+WHEN AN FUCNTION HAVE POINTER ARGUMENTS 
+THEY SHOULD CALL ADDRESS OF THE VAR TO CHANGE IN THE ORIGINAL VAR 
+IF NOT ONLY THE LOCAL VAR WILL BE CHANGED NOT THE EXPECTED OR CALLEE VAR 
+
