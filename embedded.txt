@@ -1,0 +1,84 @@
+Sensor data streams → water flowing from a tap.
+
+Buffers → buckets holding water before passing it on.
+
+Lookup tables → recipe book with pre‑calculated answers.
+
+Framebuffers → canvas storing the picture before showing it.
+
+Circular buffers → rotating drum that always keeps the latest notes.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+✅ 1. Sensor Data Streams
+What is it?
+
+Continuous flow of data from sensors (temperature, pressure, accelerometer, etc.).
+Example: A temperature sensor sending readings every millisecond.
+
+Where used?
+
+IoT devices, automotive ECUs, industrial monitoring, medical devices.
+
+Why?
+
+Sensors produce data constantly, and the system must process or store it without losing information
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+✅ 2. Buffers
+What is it?
+
+Temporary storage area in RAM for data before processing or transmission.
+Example: UART RX buffer stores incoming bytes before the CPU reads them.
+
+Where used?
+
+Communication interfaces (UART, SPI, I2C, CAN), audio streaming, DMA transfers.
+
+Why?
+
+Prevents data loss when producer (sensor/hardware) is faster than consumer (CPU/software).
+Acts as a shock absorber between two different speeds.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ 3. Lookup Tables
+What is it?
+
+Precomputed array of values for quick access instead of recalculating.
+Example: Sine wave table for PWM generation.
+
+Where used?
+
+Signal processing, motor control, graphics, cryptography.
+
+Why?
+
+Saves CPU time and power by avoiding expensive calculations in real-time.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+✅ 4. Framebuffers
+What is it?
+
+A block of memory that stores an entire image before sending it to a display.
+Example: LCD screen uses a framebuffer to hold pixel data.
+
+Where used?
+
+Graphics systems, GUIs, video rendering.
+
+Why?
+
+Allows smooth updates and prevents flickering by preparing the full frame before display refresh.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+✅ 5. Circular Buffers
+What is it?
+
+A fixed-size buffer that overwrites old data when full (FIFO style).
+Example: Logging the last 100 sensor readings.
+
+Where used?
+
+Real-time data logging, audio streaming, network packets.
+
+Why?
+
+Efficient memory usage for continuous streams where only the latest data matters.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
