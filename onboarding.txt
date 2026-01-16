@@ -1,0 +1,33 @@
+CERTS :
+
+Dev side 
+Device → presents Device Cert + proves with Private Key
+Cloud side
+Cloud → presents Broker Cert + checks Device Cert against Root CA
+
+Both sides → trust each other via Root CA
+Cloud → checks VIN/Device ID in registry → applies policies
+
+
+
+
+Car → shows Device Cert + VIN → Cloud checks database
+Cloud → shows Server Cert → Car checks Root CA
+Both sides → trust established
+Car ↔ Cloud → exchange secure MQTT messages
+
+Think of certificates like a driver’s license:
+
+CA = DMV (the authority that issues licenses).
+
+Expiry = License has an expiration date; you must renew it.
+
+Revocation = If you break the law, your license can be canceled before expiry.
+
+✅ In short:
+
+CA = who issued the certificate (trust source).
+
+Expiry = when the certificate stops being valid.
+
+Revocation = certificate canceled early due to risk or misuse.
