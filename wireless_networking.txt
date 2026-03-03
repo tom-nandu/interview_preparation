@@ -1,0 +1,30 @@
+Choose on the below criteria : 
+
+Range → How far devices need to communicate.
+
+Power Consumption → Battery-powered vs. mains-powered devices.
+
+Bandwidth → Amount of data (video vs. sensor readings).
+
+Topology → Star (router-based) vs. Mesh (devices relay data).
+
+Ecosystem → Compatibility with Matter, Zigbee hubs, or cloud services.
+
+Easy Rule of Thumb
+Need video or heavy data? → Wi-Fi.
+
+Need ultra-low power? → BLE.
+
+Need mesh for lighting/sensors? → Zigbee or Thread.
+
+Need secure locks/alarms? → Z-Wave.
+
+Want future-proof Matter integration? → Thread.
+
+
+-----------------------------------------------------------------------------------|
+Topology	Protocols	Best Use Case                                                  |
+-----------------------------------------------------------------------------------|
+Star	Wi-Fi, BLE, Cellular	High-bandwidth devices, wearables, cloud-heavy IoT     |
+Mesh	Zigbee, Thread, Z-Wave	Smart lighting, sensors, locks, automation           |
+-----------------------------------------------------------------------------------|
