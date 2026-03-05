@@ -1,0 +1,32 @@
+Queue [ATOMIC-MSG]
+1)posix     --> easy api calls , modern usage , supports notification. appears under /dev/mqueue
+2)system V  --> complex api call , 
+
+Pros in POSIX : 
+It provides discrete message supports 
+Multiple user can communicate at same time 
+supports priority message to deliver on first 
+
+
+block vs nonblock 
+
+block is nothing the process is suspended until success 
+nonblock returns error 
+
+Q vs pipe 
+Discrete msg in Q 
+In pipe we dont know where msg starts nd end . 
+Pipes can be used for continous data flow 
+Q - multi producer nd consumer 
+pipe - only 1 producer and 1 consumer 
+
+Okay Now what happens if Q is full but how will producer know it 
+Once Q is full , producer is blocked to send 
+What about security ;
+while creating queue u can 0644 , we can block read and write 
+
+Things to note in system design
+
+How much message can be sent 
+max length of each msg 
+these can be configured in mq_attr
