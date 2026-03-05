@@ -1,0 +1,10 @@
+pipes 
+
+1)un_named pipe / anonymous pipe --> pipe(fd)
+2)named pipe                     --> mkfifo(fd)
+
+
+they are just stream of bytes 
+data are not stored 
+read is blocked until data is available 
+write is blocked if buffer is full
