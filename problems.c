@@ -126,5 +126,70 @@ int main() {
     return 0;
 }
 
+--------------------------------------------------------------------------------------------
+Remove duplicate of an array 
+
+unique arr 
+old arr
+flag rep
+    rep = 0
+    compare uni and old 
+    iterate the old with outer loop with unique arr in inner loop 
+
+    compare 0 th element with unique arr iteration if it is same 
+    flag rep = 1 
+    if rep = 0 
+    write the element from old to uni and k++
+
+    
+    #include <stdio.h>
+
+int main() {
+    int arr[100], unique[100];
+    int n, k = 0;
+    int isDuplicate;
+
+    // Input size
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    // Input array elements
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Remove duplicates using extra array
+    for (int i = 0; i < n; i++) {
+        isDuplicate = 0;
+
+        // Check if arr[i] already exists in unique array
+        for (int j = 0; j < k; j++) {
+            if (arr[i] == unique[j]) {
+                isDuplicate = 1;
+                break;
+            }
+        }
+
+        // If not duplicate, add to unique array
+        if (isDuplicate == 0) {
+            unique[k] = arr[i];
+            k++;
+        }
+    }
+
+    // Print array after removing duplicates
+    printf("Array after removing duplicates:\n");
+    for (int i = 0; i < k; i++) {
+        printf("%d ", unique[i]);
+    }
+
+    return 0;
+}
+
+
+--------------------------------------------------------------------------------------------
+    
+
 
 
