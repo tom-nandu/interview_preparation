@@ -189,6 +189,40 @@ int main() {
 
 
 --------------------------------------------------------------------------------------------
+inserting an element in an array at given position 
+
+    #include <stdio.h>
+
+int main() {
+    int arr[10] = {1, 2, 3, 4, 5};  // initial array
+    int n = 5;                      // current number of elements
+    int pos = 3;                    // position to insert (1-based index)
+    int value = 99;                 // value to insert
+
+    // Shift elements to the right
+    for (int i = n; i >= pos; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    // Insert new element
+    arr[pos - 1] = value;
+    n++;  // increase array size
+
+    // Print updated array
+    printf("Array after insertion:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+10,20,30,40,50        --> iteration 1 --> i=5 --> arr[5]=arr[4] ---> 10,20,30,40,50,50
+10,20,30,40,50,50     --> iteration 2 --> i=4 --> arr[4]=arr[3] ---> 10,20,30,40,40,50
+    now arr[pos] = value ; --> 10,20,30,400,40,50
+
+    
+--------------------------------------------------------------------------------------------
     
 
 
