@@ -223,6 +223,54 @@ int main() {
 
     
 --------------------------------------------------------------------------------------------
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+
+void insert_at_pos (int arr[] , int *n , int pos , int val )
+{
+    for (int i=*n ; i>pos ; i--)
+    {
+        arr[i]=arr[i-1];
+    }
+    
+    arr[pos]=val;
+    (*n)++;
+}
+
+void print(int arr[] , int n)
+{
+    printf("[ ");
+    for (int i=0 ; i<n;i++)
+    
+    {
+        printf("%d ",arr[i]);
+    }
+      printf("]");
+}
+
+int main()
+{
+     int n=5;
+    int arr[10]={10,20,40,50,60};
+    print(arr,n);
+   printf("\n");
+    insert_at_pos(arr,&n,2,30);
+     print(arr,n);
+    
+    
+}
+
+same problem using functions to insert an element .
+
+  
+--------------------------------------------------------------------------------------------
     
 
 
