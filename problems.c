@@ -382,4 +382,89 @@ int main()
     
     
 }
+----------------------------------------------------------------
+    insert in an sorted array 
 
+    /******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+
+void insert_at_pos (int arr[] , int *n , int pos , int val )
+{
+    for (int i=*n ; i>pos ; i--)
+    {
+        arr[i]=arr[i-1];
+    }
+    
+    arr[pos]=val;
+    (*n)++;
+}
+
+void insert_at_start(int arr[] , int *n   , int value)
+{
+    for(int i=*n ; i>0 ; i--)
+    
+    {
+        arr[i]=arr[i-1];
+    }
+    arr[0] = value ;
+    (*n)++;
+    
+}
+
+void print(int arr[] , int n)
+{
+    printf("[ ");
+    for (int i=0 ; i<n;i++)
+    
+    {
+        printf("%d ",arr[i]);
+    }
+      printf("]");
+}
+
+void print_at_end(int arr[] , int *n , int value)
+{
+     arr[*n]=value ; 
+    (*n)++ ; 
+}
+
+void sort(int arr[] , int *n , int value )
+{
+    for (int i=0 ; i<*n ; i++)
+    {
+        if(arr[i] > value) 
+        
+        {
+            for (int j=*n ; j>i;j--)
+            {
+                arr[j]=arr[j-1];
+            }
+            
+            arr[i] = value ;
+            (*n)++;
+            return ; 
+        }
+        
+    }
+    arr[*n] = value ; 
+        (*n)++ ; 
+    
+}
+int main()
+{
+    int n=5;
+    int arr[10]={10,20,40,50,60};
+    print(arr,n);
+    printf("\n");
+    sort(arr,&n,12);
+    print(arr,n);
+    
+    
+}
