@@ -271,7 +271,53 @@ same problem using functions to insert an element .
 
   
 --------------------------------------------------------------------------------------------
+INSERT AT START : 
     
+#include <stdio.h>
+
+void insert_at_pos (int arr[] , int *n , int pos , int val )
+{
+    for (int i=*n ; i>pos ; i--)
+    {
+        arr[i]=arr[i-1];
+    }
+    
+    arr[pos]=val;
+    (*n)++;
+}
+
+void insert_at_start(int arr[] , int *n   , int value)
+{
+    for(int i=*n ; i>0 ; i--)
+    
+    {
+        arr[i]=arr[i-1];
+    }
+    arr[0] = value ;
+    (*n)++;
+    
+}
+
+void print(int arr[] , int n)
+{
+    printf("[ ");
+    for (int i=0 ; i<n;i++)
+    
+    {
+        printf("%d ",arr[i]);
+    }
+      printf("]");
+}
+
+int main()
+{
+    int n=5;
+    int arr[10]={10,20,40,50,60};
+    print(arr,n);
+    printf("\n");
+    insert_at_start(arr,&n,30);
+    print(arr,n);   
+}
 
 
 
