@@ -1,3 +1,6 @@
+insert an element --> shift right 
+delete an element --> shift left
+
 left_rotation of array 
 
 
