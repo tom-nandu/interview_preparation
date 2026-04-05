@@ -496,3 +496,38 @@ int main()
     
     
 }
+
+---------------------------------------------
+    delete an element first occcured in an array 
+
+    
+void first_occurence(int arr[] , int *n , int val )
+{
+    int x ;
+    for (int i=0 ; i<*n;i++)
+    {
+        if(arr[i]==val)
+        {
+            x=i ;
+        }
+    }
+    
+    for (int j=x ; j<*n ; j++)
+    {
+        arr[j]=arr[j+1];
+    }
+    
+    (*n)--;
+    
+}
+int main()
+{
+    int n=5;
+    int arr[10]={10,20,40,50,60};
+    print(arr,n);
+    printf("\n");
+   first_occurence(arr,&n,20);
+    print(arr,n);
+    
+    
+}
