@@ -471,3 +471,28 @@ int main()
     
     
 }
+-----------------------------------------------------------
+    delete an index of an array 
+
+    
+   void delete(int arr[] , int *n , int index)
+   {
+       for (int i=index ; i<*n-1;i++)
+       {
+           arr[i] = arr[i+1];
+       }
+       
+       (*n)--;
+   }
+
+int main()
+{
+    int n=5;
+    int arr[10]={10,20,40,50,60};
+    print(arr,n);
+    printf("\n");
+   delete(arr,&n,2);
+    print(arr,n);
+    
+    
+}
