@@ -83,4 +83,43 @@ int main()
 }
 
 ------------------------------------------------
-22. Find last occurrence using binary search    
+22. Find last occurrence using binary search  
+    #include <stdio.h>
+
+int last_occ(int arr[], int l, int r, int v)
+{
+    int res=-1 ;
+    while (l <= r)
+    {
+        
+        int m = l + (r - l) / 2;
+
+        if (arr[m] == v)
+        {
+            res = m ;
+           //r=m-1;
+            l=m+1;
+        }
+        else if (arr[m] > v)
+        {
+            r = m - 1;
+        }
+        else
+        {
+            l = m + 1;
+        }
+    }
+    return res;
+}
+
+int main()
+{
+    int arr[5] = {1, 2, 4, 6, 6};
+    int v = 6;
+
+    int x = last_occ(arr, 0, 4, v);
+    printf("%d\n", x);
+
+    return 0;
+}
+--------------------------------------------------------------------------------
