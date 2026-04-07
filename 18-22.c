@@ -5,7 +5,7 @@
 22. Find last occurrence using binary search
 
 -------------------------------------------------------------------
-20. Find position where an element should be inserted
+18. Find position where an element should be inserted
 #include <stdio.h>
 
 int iter_search(int arr[], int l, int r, int v)
