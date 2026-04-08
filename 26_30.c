@@ -57,3 +57,58 @@ int main()
 }
 
 --------------------------------------------------------------
+  28) Rotate array left by K positions
+
+  #include<stdio.h>
+
+void rotate(int arr[] , int l , int r )
+{
+  
+    while (l<r)
+    {
+        int tmp= arr[l] ;
+        arr[l] = arr[r];
+        arr[r] = tmp ;
+        l++ ;
+        r-- ; 
+    }
+}
+    
+    int rotate_right(int arr[] , int n , int k )
+    {
+        if(k>n)
+        {
+            return -1 ;
+        }
+        
+       rotate(arr,0,n-1);
+      
+       rotate(arr,0,k-1);
+      
+       rotate(arr,k,n-1);
+       
+        
+    }    
+
+
+int main()
+{
+    int arr[10]={10,20,30,40,50,60,70,80,90,900};
+    
+    int x = sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<x;i++)
+    {
+    printf(" %d ",arr[i]);
+    }
+    rotate_right(arr,x,5);
+    printf("\n");
+    for(int i=0;i<x;i++)
+    {
+    printf(" %d ",arr[i]);
+    }
+    return  -1; 
+}
+
+--------------------------------------------------------------
+
+  29. Rotate using reverse method
