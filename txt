@@ -1,0 +1,22 @@
+Buffer overflow 
+
+Buffer overflow = writing more data than allocated memory
+👉 strcpy causes overflow
+👉 strncpy prevents overflow but can break string termination
+
+
+✅ strcpy strcpy(dest, src);
+
+👉 “Copy everything blindly until end” ❌
+
+✅ strncpy strncpy(dest, src, n);
+👉 “Copy at most N bytes, may forget to add end” ⚠️
+
+
+⚠️ Hidden Risk
+Even without overflow:
+👉 Missing \0 causes:
+
+Garbage printing
+Reading beyond buffer
+Logical errors
